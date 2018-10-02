@@ -9,7 +9,9 @@
   "scripts": {
     "ts-node": "ts-node",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "tsc": "tsc",
+    "browserify": "browserify scripts/createMin.js -o build/ising.min.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.2",
     "@types/node": "^10.11.3",
+    "browserify": "^16.2.3",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.3",
     "ts-node": "^7.0.1",
