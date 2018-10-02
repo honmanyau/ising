@@ -41,10 +41,8 @@ export default class IsingModel {
 
     this.data = [];
 
-    this.calculateTc();
-    this.calculateβ();
-
     this.generateInitialState();
+    this.calculateSystemProperties();
   }
 
   /**
@@ -57,8 +55,12 @@ export default class IsingModel {
    */
   public calculateSystemProperties = (): void => {
     const { size, J, calculateSiteΣσj } = this;
+    const { calculateTc, calculateβ } = this;
     let spinTotal = 0;
     let Σσiσj = 0;
+
+    calculateTc();
+    calculateβ();
 
     this.spins.forEach((row, rowIndex) => {
       row.forEach((site, colIndex) => {
@@ -223,8 +225,6 @@ export default class IsingModel {
 
       return row;
     });
-
-    this.calculateSystemProperties();
   }
 
   /**
