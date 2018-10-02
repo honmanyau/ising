@@ -1,9 +1,6 @@
 # dependencies
 /node_modules
 
-# dev
-/test
-
 # production
 /scripts
 /build
