@@ -5,6 +5,7 @@
 /test
 
 # production
+/scripts
 /build
 /lib
 
