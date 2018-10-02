@@ -46,12 +46,11 @@ export default class IsingModel {
   }
 
   /**
-   * This method calculates the hamiltonian and magnetisation of the current
-   * configuration and store them in {@code this.H} and
+   * This method calculates the Hamiltonian and magnetisation of the current
+   * configuration and stores them in {@code this.H} and
    * {@code this.M} respectively. It is important to note that each
    * interaction between two spins is only considered once for hamiltonian
-   * calculation. The properties are calculated in a single method to reduce
-   * the need for additional loops.
+   * calculation.
    */
   public calculateSystemProperties = (): void => {
     const { size, J, calculateSiteΣσj } = this;
