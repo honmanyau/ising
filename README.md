@@ -12,7 +12,7 @@
   * [`model.data`](#modeldata)
   * [`model.k`](#modelk)
   * [`model.size`](#modelsize)
-  * [`model.spin`](#modelspin)
+  * [`model.spins`](#modelspins)
   * [`model.H`](#modelh)
   * [`model.J`](#modelj)
   * [`model.M`](#modelm)
@@ -68,7 +68,7 @@ const model = new IsingModel(MODEL_SIZE);
 // Simulation using the Metropolis-Hastings algorithm
 model.metropolisSweep(SIMULATION_STEPS);
 
-// Simulationusing the Wolff algorithm
+// Simulation using the Wolff algorithm
 model.wolff(SIMULATION_STEPS);
 
 console.log(model.J); // Nearest-neighbour interaction strength J. Default is 1.
