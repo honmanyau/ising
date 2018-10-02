@@ -46,7 +46,7 @@ export default class IsingModel {
   }
 
   /**
-   * This method caluclates the hamiltonian and magnetisation of the current
+   * This method calculates the hamiltonian and magnetisation of the current
    * configuration and store them in {@code this.H} and
    * {@code this.M} respectively. It is important to note that each
    * interaction between two spins is only considered once for hamiltonian
