@@ -1,0 +1,39 @@
+{
+  "name": "ising",
+  "version": "0.1.0",
+  "description": "A JavaScript library for Monte Carlo simulations of the 2D Ising model.",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "ts-node": "ts-node",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honmanyau/ising.git"
+  },
+  "keywords": [
+    "Ising",
+    "Monte Carlo",
+    "Simulation",
+    "Magnetism"
+  ],
+  "author": "Honman Yau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/honmanyau/ising/issues"
+  },
+  "homepage": "https://github.com/honmanyau/ising#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.3",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {}
+}
