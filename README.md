@@ -49,6 +49,7 @@ Alternatively, the latest release can also be downloaded [here](https://github.c
 
 ```html
 <script src="ising.js"></script>
+<!-- The script exposes the IsingModel -->
 ```
 
 ## Quick Start
@@ -201,4 +202,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 
-[MIT](https://github.com/honmanyau/chronik/blob/master/LICENSE)
+[MIT](./LICENSE.md)
