@@ -11,7 +11,7 @@
     "lint": "tslint -p tsconfig.json",
     "test": "jest",
     "tsc": "tsc",
-    "browserify": "browserify scripts/createMin.js -o build/ising.min.js"
+    "browserify": "browserify scripts/createMin.js -o build/ising.js"
   },
   "repository": {
     "type": "git",
