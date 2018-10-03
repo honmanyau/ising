@@ -1,6 +1,6 @@
 {
   "name": "ising",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A JavaScript library for Monte Carlo simulations of the 2D Ising model.",
   "main": "./lib/index.js",
   "files": [
