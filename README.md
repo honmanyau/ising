@@ -31,6 +31,8 @@ Ising is a JavaScript library for Monte Carlo simulations of the 2D Ising model 
 
 An Ising model created with this library is a simplified square lattice that assumes zero external field and periodic boundary conditions are applied to ensure that all sites have an equal number of neighbours. Calculations can be performed using either the [Metropolis-Hastings algorithm ](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm) or the [Wolff algorithm](https://en.wikipedia.org/wiki/Wolff_algorithm).
 
+**Please note that this is currently an experimental library (no pun intended). Contributions and suggestions are welcomed.**
+
 ## Installation
 
 For a Node.js environment:
