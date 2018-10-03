@@ -1,3 +1,6 @@
+[![Known Vulnerabilities](https://snyk.io/test/npm/ising/badge.svg)](https://snyk.io/test/npm/ising)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/ising.svg)](https://badge.fury.io/js/ising)
 # Ising
 
 >  A JavaScript library for Monte Carlo simulations of the 2D Ising model.
