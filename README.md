@@ -11,6 +11,7 @@
   * [`IsingModel`](#isingmodel)
   * [`model.data`](#modeldata)
   * [`model.k`](#modelk)
+  * [`model.saveConfig`](#modelsaveconfig)
   * [`model.size`](#modelsize)
   * [`model.spins`](#modelspins)
   * [`model.H`](#modelh)
@@ -91,46 +92,50 @@ The `IsingModel` class is a constructor function used for creating a model objec
 
 * `size`: the number of spins in both dimensions of the square lattice; the total number of spins in the model created is `size * size`
 * `options` (optional): an object that contains custom parameters that the Ising model will be constructed with. The available options are:
-  * `k`: Boltzmann constant. The default value is `1`
-  * `J`: nearest neighbour interaction strength. The default value is `1`
-  * `T`: heat bath temperature. The default is `0.01`
-  * `saveConfig`: a boolean value indicating whether or or not configurations will be logged during simulation. The default value is `false`. When set to `true`, the entire configuration will also be added to the `config` property of a log object that added `model.data` every step. It should be noted that this is both memory and temporally expansive; the following example shows how one could avoid storing configurations in `model.data` unnecessarily:
-
-    ```javascript
-    // ===================
-    // == Configuration ==
-    // ===================
-    const MODEL_SIZE = 10;
-    const EQUILIBRATION_STEPS = 2000;
-    const COLLECTION_STEPS = 250;
-
-    // ==========
-    // == Main ==
-    // ==========
-    const model = new IsingModel(MODEL_SIZE); // saveConfig is false by default
-
-    model.wolff(EQUILIBRATION_STEPS);
-
-    model.saveConfig = true;
-    model.wolff(COLLECTION_STEPS);
-    ```
+  * `k`: Boltzmann constant. The default value is `1`. See [`model.k`](#modelk) for additional information.
+  * `J`: nearest neighbour interaction strength. The default value is `1`. See [`model.J`](#modelj) for additional information.
+  * `T`: heat bath temperature. The default is `0.01`. See [`model.T`](#modelt) for additional information.
+  * `saveConfig`: a boolean value indicating whether or or not configurations will be logged during simulation. The default value is `false`. When set to `true`, the entire configuration will also be added to the `config` property of a log object that is added to `model.data` every step. See [`model.saveConfig`](#modelsaveconfig) for additional information.
 
 ### `model.data`
 
 An array that contains objects that are created at the end of every simulation step, where each object has the following properties:
 
-* `k`: Boltzmann constant applied to the configuration
-* `J`: nearest neighbour interaction strength applied to the configuration
-* `T`: heat bath temperature applied to the configuration
-* `M`: the computed magnetisation of the configuration
-* `H`: the computed Hamiltonian of the configuration
-* `config`: a snapshot of the configuration created by deep-cloning `model.spins`
+* `k`: Boltzmann constant applied to the configuration.
+* `J`: nearest neighbour interaction strength applied to the configuration.
+* `T`: heat bath temperature applied to the configuration.
+* `M`: the computed magnetisation of the configuration.
+* `H`: the computed Hamiltonian of the configuration.
+* `config`: a snapshot of the configuration created by deep-cloning `model.spins`.
 
 ### `model.k`
 
 The value of the Boltzmann constant that the model uses.
 
 The value can be changed during a simulation safely during a simulation as the values that depend on it, namely the critical temperature `Tc`, are recomputed at the beginning of every simulation step. If this value is not set using an `options` object during model construction or set outside of a simulation cycle, the method `model.calculateSystemProperties` should be called to recompute `Tc`.
+
+### `model.saveConfig`
+
+A boolean value indicating whether or or not configurations will be logged during simulation. The default value is `false`. When set to `true`, the entire configuration will also be added to the `config` property of a log object that is added to `model.data` every step. It should be noted that this is both memory and temporally expansive; the following example shows how one could avoid storing configurations in `model.data` unnecessarily:
+
+```javascript
+// ===================
+// == Configuration ==
+// ===================
+const MODEL_SIZE = 10;
+const EQUILIBRATION_STEPS = 2000;
+const COLLECTION_STEPS = 250;
+
+// ==========
+// == Main ==
+// ==========
+const model = new IsingModel(MODEL_SIZE); // saveConfig is false by default
+
+model.wolff(EQUILIBRATION_STEPS);
+
+model.saveConfig = true;
+model.wolff(COLLECTION_STEPS);
+  ```
 
 ### `model.size`
 
@@ -140,8 +145,8 @@ The number of spins in both dimensions of the square lattice; the total number o
 
 An array of size `model.size`, where each subarray is also of `model.size` and contains objects of with the following properties:
 
-* `spin`: the spin at a given site, which takes the value of either `-1` or `1`
-* `state`: a value that describes the sum of the product of spins at a given site and its four neighbours. The value can be `-4`, `-2`, `0`, `2` or `4`
+* `spin`: the spin at a given site, which takes the value of either `-1` or `1`.
+* `state`: a value that describes the sum of the product of spins at a given site and its four neighbours. The value can be `-4`, `-2`, `0`, `2` or `4`.
 
 ### `model.H`
 
@@ -182,7 +187,7 @@ It is worth noting that the order in which spins are considered is somewhat rand
 
 #### Parameters
 
-* `iterations`: the number of sweeps to perform the Metropolis-Hasting algorithm on the model
+* `iterations`: the number of sweeps to perform the Metropolis-Hasting algorithm on the model.
 
 ### <code>model.metropolisSweep(*[iterations]*)</code>
 
@@ -190,7 +195,7 @@ This method is an implementation of the Wolff algorithm for clustered updates. I
 
 #### Parameters
 
-* `iterations`: the number of sweeps to perform the Metropolis-Hasting algorithm on the model
+* `iterations`: the number of sweeps to perform the Metropolis-Hasting algorithm on the model.
 
 ## Changelog
 
