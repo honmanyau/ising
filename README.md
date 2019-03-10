@@ -1,3 +1,5 @@
+**This repository is no longer maintained due to a complete rewrite and has been achived. Please use it with caution.**
+
 # Ising
 
 [![NPM version](https://badge.fury.io/js/ising.svg)](http://badge.fury.io/js/ising)
