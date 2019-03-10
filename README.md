@@ -1,4 +1,4 @@
-**This repository is no longer maintained due to a complete rewrite and has been achived. Please use it with caution.**
+**This repository is no longer maintained due to a complete rewrite and will be archived. Please use it with caution.**
 
 # Ising
 
